@@ -1,8 +1,23 @@
-import { FC } from "react";
-import "./App.css";
+import { FC, useEffect, useState } from "react";
+import { Board as BoardComponent } from "./components/board/board";
+import { Board } from "./models/board";
+import "./app.scss";
 
 const App: FC = () => {
-  return <div className="App"></div>;
+  const [board, setBoard] = useState<Board | null>(null);
+
+  useEffect(() => {
+    start();
+  }, []);
+
+  const start = () => {
+    const newBoard = new Board();
+    newBoard.initCells();
+    newBoard.arrangeFigures();
+    setBoard(newBoard);
+  };
+
+  return <div className="app">{board && <BoardComponent board={board} />}</div>;
 };
 
-export default App;
+export { App };

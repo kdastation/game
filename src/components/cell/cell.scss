@@ -1,0 +1,24 @@
+.cell {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        position: relative;
+        width: 48px;
+        height: 48px;
+    }
+}
+.white{
+    background-color: antiquewhite;
+}
+
+.black{
+    background-color: black;
+}
+
+.selected{
+    background-color: aquamarine;
+}
